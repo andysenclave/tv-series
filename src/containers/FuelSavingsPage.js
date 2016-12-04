@@ -21,7 +21,7 @@ FuelSavingsPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    fuelSavings: state.fuelSavings
+    login: state.login
   };
 }
 

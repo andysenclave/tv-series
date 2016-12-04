@@ -1,4 +1,4 @@
-export default {
+export const fuelData = {
   fuelSavings: {
     newMpg: '',
     tradeMpg: '',
@@ -16,3 +16,11 @@ export default {
     }
   }
 };
+
+export const login = {
+  loginData: {
+    username: '',
+    password: ''
+  }
+};
+
