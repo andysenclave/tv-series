@@ -1,2 +1,5 @@
-# tv-series
-This is the upcoming project based on the tv series app, the project is based and built on a boilerplate: redux-slignshot. 
+*TV Series app
+
+this is an upcoming projec based on my idea of TV Series
+
+the project is built with the help of REACT-SLINGSHOT Boilerplate, Redux-form and Material UI implementation
