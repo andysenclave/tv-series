@@ -1,19 +1,17 @@
-import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
+'use strict';
+import React, {Component, PropTypes} from 'react';
+import Header from './Header';
 
-// This is a class-based component because the current
-// version of hot reloading won't hot reload a stateless
-// component at the top-level.
-class App extends React.Component {
+class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
+
   render() {
     return (
       <div>
-        <IndexLink to="/">Home</IndexLink>
-        {' | '}
-        <Link to="/fuel-savings">Demo App</Link>
-        {' | '}
-        <Link to="/about">About</Link>
-        <br/>
+        <Header {...this.props}/>
         {this.props.children}
       </div>
     );
@@ -21,6 +19,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+  route:PropTypes.object,
   children: PropTypes.element
 };
 

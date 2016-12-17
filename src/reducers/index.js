@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import fuelSavings from './fuelSavingsReducer';
-import loginReducer from './loginReducer';
 import {routerReducer} from 'react-router-redux';
+import DemoReducer from './demoReducer';
+import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-  fuelSavings,
-  loginReducer,
+  demoReducer: DemoReducer,
+  form: formReducer,
   routing: routerReducer
 });
 
