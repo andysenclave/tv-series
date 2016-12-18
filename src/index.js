@@ -1,35 +1,21 @@
+/* eslint-disable import/default */
+
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux';
-import {useRouterHistory} from 'react-router';
-import { createHistory } from 'history';
-import Routes from './routes';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 import configureStore from './store/configureStore';
-//import './styles/main.less';
+require('./favicon.ico'); // Tell webpack to load favicon.ico
 import { syncHistoryWithStore } from 'react-router-redux';
-require('es6-promise').polyfill();
 
 const store = configureStore();
 
-const getBase = () => {
-  const path    = document.location.pathname;
-  let base      = path;
-  if(base === ""){
-    base = "/";
-  }
-  return base;
-};
-
-// Updateing the history so that relative path should work for react route
-const appHistory = useRouterHistory(createHistory)({
-  basename: getBase()
-});
-
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(appHistory, store);
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Provider store={store}>
-    <Routes store={store}  history={history}/>
+    <Router history={history} routes={routes} />
   </Provider>, document.getElementById('app')
 );

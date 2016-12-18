@@ -1,36 +1,15 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as actions from '../actions/loginAction';
-import LoginForm from '../components/forms/LoginForm';
+import React from 'react';
+import { Link } from 'react-router';
 
-export const Login = (props) => {
+const Login = () => {
   return (
-    <LoginForm
-      validateLoginData={props.actions.validateLoginData}
-      loginData={props.loginData}
-    />
+    <div>
+      <h4>
+        This is Login Page
+      </h4>
+      <Link to="/"> Go back to homepage </Link>
+    </div>
   );
 };
 
-Login.propTypes = {
-  actions: PropTypes.object.isRequired,
-  loginData: PropTypes.object.isRequired
-};
-
-function mapStateToProps(state) {
-  return {
-    loginData: state.loginData
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Login);
+export default Login;
